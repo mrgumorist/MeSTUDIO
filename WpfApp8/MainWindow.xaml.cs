@@ -24,5 +24,31 @@ namespace WpfApp8
         {
             InitializeComponent();
         }
+
+        private void Debug(object sender, RoutedEventArgs e)
+        {
+    
+        }
+
+        private void Save(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Test");
+        }
+
+        private void Help1(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://sites.google.com/view/helpinmystudio");
+        }
+
+        private void SaveAll(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ExitEvent(object sender, RoutedEventArgs e)
+        {
+
+            this.Close();
+        }
     }
 }

@@ -8,7 +8,7 @@
         Title="MainWindow" Height="450" Width="800"  Icon="Res\studio.ico">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="6*" />
+            <RowDefinition Height="7*" />
             <RowDefinition Height="3*" />
             <RowDefinition Height="38*"/>
             <RowDefinition Height="12*"/>
@@ -20,22 +20,22 @@
                     <MenuItem x:Name="OpenProg1" Header="Open Project" >
 
                     </MenuItem>
-                    <MenuItem x:Name="Save1" Header="Save Project" />
-                    <MenuItem x:Name="SaveAll1" Header="SaveAll" />
-                    <MenuItem x:Name="CloseAll" Header="Close All" />
+                    <MenuItem x:Name="Save1" Header="Save Project" Click="Save" />
+                    <MenuItem x:Name="SaveAll1" Header="SaveAll" Click="SaveAll" />
+                   
                     <Separator />
-                    <MenuItem x:Name="Exit" Header="Exit" />
+                    <MenuItem x:Name="Exit" Header="Exit" Click="ExitEvent" />
 
                 </MenuItem>
                 <MenuItem Header="Edit" ></MenuItem>
 
                 <MenuItem Header="View" ></MenuItem>
                 <MenuItem Header="Debug">
-                    <MenuItem x:Name="StartDebug" Header="Start Debugging" ></MenuItem>
+                    <MenuItem x:Name="StartDebug" Header="Start Debugging" Click="Debug"  ></MenuItem>
                 </MenuItem>
                 <MenuItem Header="Help" >
 
-                    <MenuItem x:Name="Help"  Header="Help">
+                    <MenuItem x:Name="Help"  Header="Help"  Click="Help1">
                         <MenuItem.Icon>
                             <Image Source="Res/Help.png"/>
                         </MenuItem.Icon>
@@ -54,20 +54,20 @@
                     </Button>
 
                     <Separator />
-                    <Button x:Name="Save2" >
+                    <Button x:Name="Save2" Click="Save" >
                         <Image Source="Res/Save.png"/>
                     </Button>
                     <Separator />
-                    <Button>
+                    <Button Click="SaveAll">
                         <Image x:Name="SaveAll2" Source="Res/SaveAll.png"/>
                     </Button>
 
                 </ToolBar>
                 <ToolBar>
-                    <Button VerticalAlignment="Top" HorizontalAlignment="Left" >
+                    <Button VerticalAlignment="Top" HorizontalAlignment="Left" Click="Debug" >
                         <StackPanel Orientation="Horizontal" >
                             <Image Source="Res/Debug.png" Width="16" Height="16"/>
-                            <TextBlock>Start Debug </TextBlock>
+                            <Label>Start Debug</Label>
                         </StackPanel>
                     </Button>
                 </ToolBar>
