@@ -5,8 +5,87 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp8"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800"  Icon="Res\studio.ico">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="6*" />
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="38*"/>
+            <RowDefinition Height="12*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0">
+            <Menu  >
+                <MenuItem Header="File" >
+                    <MenuItem x:Name="NewFile1" Header="New Project" ></MenuItem>
+                    <MenuItem x:Name="OpenProg1" Header="Open Project" >
+
+                    </MenuItem>
+                    <MenuItem x:Name="Save1" Header="Save Project" />
+                    <MenuItem x:Name="SaveAll1" Header="SaveAll" />
+                    <MenuItem x:Name="CloseAll" Header="Close All" />
+                    <Separator />
+                    <MenuItem x:Name="Exit" Header="Exit" />
+
+                </MenuItem>
+                <MenuItem Header="Edit" ></MenuItem>
+
+                <MenuItem Header="View" ></MenuItem>
+                <MenuItem Header="Debug">
+                    <MenuItem x:Name="StartDebug" Header="Start Debugging" ></MenuItem>
+                </MenuItem>
+                <MenuItem Header="Help" >
+
+                    <MenuItem x:Name="Help"  Header="Help">
+                        <MenuItem.Icon>
+                            <Image Source="Res/Help.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </MenuItem>
+            </Menu>
+            <ToolBarTray >
+                <ToolBar Height="28" Visibility="Visible" >
+
+                    <Button x:Name="NewFile2">
+                        <Image Source="Res/New.png"/>
+                    </Button>
+                    <Separator />
+                    <Button x:Name="OpenProg2" >
+                        <Image Source="Res/Open.png"/>
+                    </Button>
+
+                    <Separator />
+                    <Button x:Name="Save2" >
+                        <Image Source="Res/Save.png"/>
+                    </Button>
+                    <Separator />
+                    <Button>
+                        <Image x:Name="SaveAll2" Source="Res/SaveAll.png"/>
+                    </Button>
+
+                </ToolBar>
+                <ToolBar>
+                    <Button VerticalAlignment="Top" HorizontalAlignment="Left" >
+                        <StackPanel Orientation="Horizontal" >
+                            <Image Source="Res/Debug.png" Width="16" Height="16"/>
+                            <TextBlock>Start Debug </TextBlock>
+                        </StackPanel>
+                    </Button>
+                </ToolBar>
+            </ToolBarTray>
+        </StackPanel>
+        <TabControl Grid.Row="1" TabStripPlacement="Top">
+            <TabItem Header="Вкладка1">Вторая вкладка</TabItem>
+            <TabItem Header="Вкладка2">Вторая вкладка</TabItem>
+        </TabControl>
+        <Grid x:Name="CodePanel" Grid.Row="2" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="6*" />
+                <ColumnDefinition  Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <RichTextBox x:Name="CodeZone"></RichTextBox>
+            <GridSplitter></GridSplitter>
+            <TreeView Grid.Column="1"> </TreeView>
+        </Grid>
     </Grid>
+   
 </Window>

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2046
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp8", "WpfApp8\WpfApp8.csproj", "{12FDFF96-22C5-41D8-84D7-C2A5426344A6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySTUDIO", "WpfApp8\MySTUDIO.csproj", "{12FDFF96-22C5-41D8-84D7-C2A5426344A6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
