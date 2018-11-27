@@ -84,7 +84,7 @@
             </Grid.ColumnDefinitions>
             <RichTextBox x:Name="CodeZone"></RichTextBox>
             <GridSplitter></GridSplitter>
-            <TreeView Grid.Column="1"> </TreeView>
+            <TreeView Grid.Column="1">  </TreeView>
         </Grid>
     </Grid>
    
