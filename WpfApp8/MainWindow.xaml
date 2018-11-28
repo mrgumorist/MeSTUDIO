@@ -16,7 +16,7 @@
         <StackPanel Grid.Row="0">
             <Menu  >
                 <MenuItem Header="File" >
-                    <MenuItem x:Name="NewFile1" Header="New Project" ></MenuItem>
+                    <MenuItem x:Name="NewFile1" Header="New Project" Click="NewProject"> </MenuItem>
                     <MenuItem x:Name="OpenProg1" Header="Open Project" >
 
                     </MenuItem>
@@ -45,7 +45,7 @@
             <ToolBarTray >
                 <ToolBar Height="28" Visibility="Visible" >
 
-                    <Button x:Name="NewFile2">
+                    <Button x:Name="NewFile2" Click="NewProject">
                         <Image Source="Res/New.png"/>
                     </Button>
                     <Separator />
@@ -72,7 +72,7 @@
                     </Button>
                 </ToolBar>
             </ToolBarTray>
-            <TabControl TabStripPlacement="Top" Height="23">
+            <TabControl x:Name="TabItems" TabStripPlacement="Top" Height="23" >
                 <TabItem Header="Вкладка1">Вторая вкладка</TabItem>
                 <TabItem Header="Вкладка2">Вторая вкладка</TabItem>
             </TabControl>
@@ -83,7 +83,7 @@
                 <ColumnDefinition Width="6*" />
                 <ColumnDefinition  Width="1.3*"/>
             </Grid.ColumnDefinitions>
-            <RichTextBox x:Name="CodeZone"></RichTextBox>
+            <RichTextBox x:Name="CodeZone" Block.LineHeight="0,1"  ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.VerticalScrollBarVisibility="Visible"/>
             <GridSplitter></GridSplitter>
             <TreeView Grid.Column="1">  </TreeView>
             <GridSplitter Grid.Column="1" ShowsPreview="False" Width="3"

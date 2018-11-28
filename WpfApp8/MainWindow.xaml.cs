@@ -20,14 +20,19 @@ namespace WpfApp8
     /// </summary>
     public partial class MainWindow : Window
     {
+     
         public MainWindow()
         {
             InitializeComponent();
+           
         }
+      
 
         private void Debug(object sender, RoutedEventArgs e)
         {
-    
+            TabItem tab = new TabItem();
+            tab.Content="ffgre";
+        
         }
 
         private void Save(object sender, RoutedEventArgs e)
@@ -51,6 +56,11 @@ namespace WpfApp8
             this.Close();
         }
 
-       
+        private void NewProject(object sender, RoutedEventArgs e)
+        {
+            AddNewItem Add = new AddNewItem();
+            Add.ShowDialog();
+
+        }
     }
 }
