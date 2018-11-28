@@ -8,8 +8,8 @@
         Title="MainWindow" Height="450" Width="800"  Icon="Res\studio.ico">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="7*" />
-            <RowDefinition Height="3*" />
+            <RowDefinition Height="Auto" />
+            
             <RowDefinition Height="38*"/>
             <RowDefinition Height="12*"/>
         </Grid.RowDefinitions>
@@ -30,7 +30,7 @@
                 <MenuItem Header="Edit" ></MenuItem>
 
                 <MenuItem Header="View" ></MenuItem>
-                <MenuItem Header="Debug">
+                <MenuItem Header="Debug" >
                     <MenuItem x:Name="StartDebug" Header="Start Debugging" Click="Debug"  ></MenuItem>
                 </MenuItem>
                 <MenuItem Header="Help" >
@@ -72,15 +72,16 @@
                     </Button>
                 </ToolBar>
             </ToolBarTray>
+            <TabControl TabStripPlacement="Top" Height="23">
+                <TabItem Header="Вкладка1">Вторая вкладка</TabItem>
+                <TabItem Header="Вкладка2">Вторая вкладка</TabItem>
+            </TabControl>
         </StackPanel>
-        <TabControl Grid.Row="1" TabStripPlacement="Top">
-            <TabItem Header="Вкладка1">Вторая вкладка</TabItem>
-            <TabItem Header="Вкладка2">Вторая вкладка</TabItem>
-        </TabControl>
-        <Grid x:Name="CodePanel" Grid.Row="2" >
+       
+        <Grid x:Name="CodePanel" Grid.Row="1" >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="6*" />
-                <ColumnDefinition  Width="2*"/>
+                <ColumnDefinition  Width="1.3*"/>
             </Grid.ColumnDefinitions>
             <RichTextBox x:Name="CodeZone"></RichTextBox>
             <GridSplitter></GridSplitter>
