@@ -86,7 +86,18 @@
             <RichTextBox x:Name="CodeZone"></RichTextBox>
             <GridSplitter></GridSplitter>
             <TreeView Grid.Column="1">  </TreeView>
+            <GridSplitter Grid.Column="1" ShowsPreview="False" Width="3"
+    HorizontalAlignment="Left" VerticalAlignment="Stretch"/>
         </Grid>
+        <Grid x:Name="ErrorMenu" Grid.Row="2">
+            
+        </Grid>
+        <GridSplitter Grid.Row="2"
+              HorizontalAlignment="Stretch"
+              VerticalAlignment="Top"
+              ShowsPreview="True"
+              Height="3"
+           />
     </Grid>
    
 </Window>
