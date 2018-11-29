@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp8"
         mc:Ignorable="d"
-        Title="MyStudio" Height="450" Width="800"  Icon="Res\studio.ico">
-    <Grid>
+        Title="MyStudio" Height="450" Width="800"  Icon="Res\studio.ico" >
+    <Grid x:Name="Namee">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             
@@ -29,7 +29,9 @@
                 </MenuItem>
                 <MenuItem Header="Edit" ></MenuItem>
 
-                <MenuItem Header="View" ></MenuItem>
+                <MenuItem Header="View" >
+                    <MenuItem Header="Change Theme" Click="MenuItem_Click" Loaded="MenuItem_Loaded"></MenuItem>
+                </MenuItem>
                 <MenuItem Header="Debug" >
                     <MenuItem x:Name="StartDebug" Header="Start Debugging" Click="Debug"  ></MenuItem>
                 </MenuItem>
@@ -49,7 +51,7 @@
                         <Image Source="Res/New.png"/>
                     </Button>
                     <Separator />
-                    <Button x:Name="OpenProg2" >
+                    <Button x:Name="OpenProg2" Click="OpenFile" >
                         <Image Source="Res/Open.png"/>
                     </Button>
 
@@ -72,10 +74,7 @@
                     </Button>
                 </ToolBar>
             </ToolBarTray>
-            <TabControl x:Name="TabItems" TabStripPlacement="Top" Height="23" >
-                <TabItem Header="Вкладка1">Вторая вкладка</TabItem>
-                <TabItem Header="Вкладка2">Вторая вкладка</TabItem>
-            </TabControl>
+            
         </StackPanel>
        
         <Grid x:Name="CodePanel" Grid.Row="1" >
@@ -83,7 +82,11 @@
                 <ColumnDefinition Width="6*" />
                 <ColumnDefinition  Width="1.3*"/>
             </Grid.ColumnDefinitions>
-            <RichTextBox x:Name="CodeZone" Block.LineHeight="0,1"  ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.VerticalScrollBarVisibility="Visible"/>
+            <TabControl x:Name="TabItemss" Grid.Row="0" Grid.Column="0"  >
+                <TabItem Header="ggg">
+                    <RichTextBox Block.LineHeight="0,1"  ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.VerticalScrollBarVisibility="Visible" > </RichTextBox>
+                </TabItem>
+            </TabControl>
             <GridSplitter></GridSplitter>
             <TreeView Grid.Column="1">  </TreeView>
             <GridSplitter Grid.Column="1" ShowsPreview="False" Width="3"

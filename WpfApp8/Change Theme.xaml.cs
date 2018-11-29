@@ -15,20 +15,20 @@ using System.Windows.Shapes;
 namespace WpfApp8
 {
     /// <summary>
-    /// Interaction logic for AddNewItem.xaml
+    /// Interaction logic for Change_Theme.xaml
     /// </summary>
-    public partial class AddNewItem : Window
+    public partial class Change_Theme : Window
     {
         int Theme;
-        public AddNewItem( ref int theme)
+        public Change_Theme(ref int Theme)
         {
-            Theme = theme;
+            this.Theme = Theme;
             InitializeComponent();
         }
 
-        private void Cancel_Click(object sender, RoutedEventArgs e)
+        private void Grid_Loaded(object sender, RoutedEventArgs e)
         {
-            this.Close();
+
         }
     }
 }

@@ -12,6 +12,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Diagnostics;
+using System.IO;
+using Microsoft.Win32;
+using System.Windows.Threading;
 
 namespace WpfApp8
 {
@@ -20,12 +24,13 @@ namespace WpfApp8
     /// </summary>
     public partial class MainWindow : Window
     {
-     
+        int Theme = 1;
         public MainWindow()
         {
             InitializeComponent();
            
         }
+
       
 
         private void Debug(object sender, RoutedEventArgs e)
@@ -56,11 +61,55 @@ namespace WpfApp8
             this.Close();
         }
 
-        private void NewProject(object sender, RoutedEventArgs e)
+        private void NewProject(object sender, RoutedEventArgs e)                                                                                    
         {
-            AddNewItem Add = new AddNewItem();
+            AddNewItem Add = new AddNewItem(ref Theme);
             Add.ShowDialog();
 
+        }
+
+        private void OpenFile(object sender, RoutedEventArgs e)
+        {
+            TabItem tabItem = new TabItem();
+            
+           
+            OpenFileDialog openFile = new OpenFileDialog();
+            if (openFile.ShowDialog() == true)
+            {
+
+                RichTextBox myRichTextBox = new RichTextBox();
+                myRichTextBox.Document.Blocks.Add(new Paragraph(new Run(File.ReadAllText(openFile.FileName))));
+                tabItem.Header = openFile.SafeFileName;
+                myRichTextBox.Document.LineHeight = 1;
+                tabItem.Content = myRichTextBox;
+                TabItemss.Items.Add(tabItem);
+            }
+         
+
+           
+
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            //Change item
+
+        }
+
+        private void MenuItem_Loaded(object sender, RoutedEventArgs e)
+        {
+            var timer = new DispatcherTimer();
+            timer.Tick += new EventHandler(timer_Tick);
+            timer.Interval = new TimeSpan(0, 0, 1);
+            timer.Start();
+        }
+        private void timer_Tick(object sender, EventArgs e)
+        {
+           if(Theme==1)
+            {
+                //Namee.Background = Brushes.Black;
+           // Window.FontStyleProperty;
+            }
         }
     }
 }
