@@ -6,13 +6,13 @@
         xmlns:local="clr-namespace:WpfApp8"
         mc:Ignorable="d"
         Title="AddNewItem" Height="489.907" Width="848.648" ResizeMode="NoResize" Icon="Res\studio.ico" >
-<Grid>
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="2*">
-                
+
             </RowDefinition>
             <RowDefinition Height="1*">
-                
+
             </RowDefinition>
         </Grid.RowDefinitions>
         <Grid x:Name="Second">
@@ -31,6 +31,21 @@
                 </TreeViewItem>
             </TreeView>
         </Grid>
+        <Grid x:Name="Lol" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="75*"/>
+                <ColumnDefinition Width="346*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Button x:Name="Create" Content="Create" Grid.Column="1" HorizontalAlignment="Left" Margin="459.6,1.6,0,0" VerticalAlignment="Top" Width="83" Grid.Row="4" Height="20"/>
+            <Button x:Name="Cancel" Content="Cancel" Grid.Column="1" HorizontalAlignment="Left" Margin="580.6,30,0,0" VerticalAlignment="Top" Width="83" Grid.Row="3" Height="20" Grid.RowSpan="2" Click="Cancel_Click"/>
+        </Grid>
     </Grid>
-    
+
 </Window>
